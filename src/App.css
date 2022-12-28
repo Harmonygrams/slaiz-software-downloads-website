@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+.closeHamburger {
+  position: relative;
 }
+.closeHamburger div{
+  position: absolute;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.closeHamburger :first-child {
+  transform: rotate(45deg);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.closeHamburger :last-child {
+  transform: rotate(-45deg);
+}
+.skeleton__loader-wrapper {
+  background-color:rgba(128, 128, 128, .05);
+  width: 100%; 
+  height: 200px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; 
+  gap: 10%; 
+  padding-inline: 20px; 
+  padding-block: 30px; 
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.product__image-container{
+  width: 80%;
+  height: 20px;
+  background-color: rgba(128, 128, 128, .1);
+  border-radius: 10px;
+  display: flex; 
+  justify-content: flex-start;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-title {
+  width: 50%;
+  height: 20px;
+  background-color: rgba(128, 128, 128, .1);
+  border-radius: 10px;
+  display: flex; 
+  justify-content: flex-start;
+}
+.download-button{
+  width: 70%;
+  height: 50%;
+  background-color: rgba(128, 128, 128, .1);
+  border-radius: 10px;
+  display: flex; 
+  justify-content: flex-start;
+}
+.animated-mover {
+  background-color: rgba(128, 128, 128, .05);
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  animation-name : movingAnimation; 
+  animation-duration: .9s; 
+  animation-timing-function:ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+@keyframes movingAnimation{
+  0% { margin-left: 0%;}
+  25% {margin-left: 25%;}
+  50% {margin-left: 50%;}
+  75% {margin-left: 75%;}
+  100% {margin-left: 100%;}
+}
+.input__field-new-program {
+  border: 2px solid #efefef; 
+  padding-inline: 10px; 
+  text-overflow: ellipsis; 
+  font-size: 1rem; 
+  padding-block: 10px; 
+}
+.form__add-new-program {
+  width: 500px;
 }
