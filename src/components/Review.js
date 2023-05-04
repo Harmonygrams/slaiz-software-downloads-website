@@ -5,20 +5,25 @@ import { ImWhatsapp } from 'react-icons/im'
 import { useEffect, useState } from 'react'
 const Review = () => {
     const [isLoadingResources, setIsLoadingResources] = useState(true)
+    const [imageUrl, setImageUrl] = useState('')
     const [program, setProgram] = useState({
         name : '', 
-        description : '', 
-        image : '',
-        downloads : '', 
-        isFree : '', 
+        description : '',
+        image : new URL('https://slaiz.link'),
+        downloads : '',
+        isFree : '',
         downloadUrl : '',
-        comment : '', 
+        comment : '',
         isLoaded : false,
     })
     const {id} = useParams()
     useEffect(() => {
         fetchProgram(id, setIsLoadingResources, setProgram)
-    })
+    }, [])
+    useEffect(() => {
+        const newImageUrl = new URL(program.image)
+        setImageUrl(newImageUrl)
+    }, [program])
     if(isLoadingResources){
         return(
             <div> 
@@ -56,7 +61,7 @@ const Review = () => {
             <div className='py-4 flex px-4 flex-col gap-4 md:flex-row max-w-7xl md:mx-auto md:justify-center md:items-center'> 
                 <div className='w-full md:p-20'> 
                     <img 
-                        src={program.image}
+                        src={imageUrl}
                         alt = {"product"}
                         className="w-full"
                     />

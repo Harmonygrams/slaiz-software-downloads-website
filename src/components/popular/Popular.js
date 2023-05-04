@@ -1,6 +1,7 @@
 import {FiDownload} from 'react-icons/fi'
 import {recordDownloads} from '../../api/index'
 const Popular = ({name, downloads, image, isFree, downloadUrl, _id}) => {
+    const imageUrl = new URL(image)
     return (
         <div className='md:w-1/2 xl:w-1/3'> 
             <a 
@@ -9,7 +10,7 @@ const Popular = ({name, downloads, image, isFree, downloadUrl, _id}) => {
             > 
                 <div className='w-10'> 
                     <img 
-                        src={image}
+                        src={imageUrl}
                         alt="product"
                     /> 
                 </div>

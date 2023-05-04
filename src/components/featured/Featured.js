@@ -1,5 +1,6 @@
 import { recordDownloads } from "../../api"
 const Featured = ({name, downloadUrl, image, isFree, _id}) => {
+    const imageUrl = new URL(image)
     return( 
         <a 
             className='w-1/2 sm:w-1/3 md:w-1/4 xl:w-1/5 p-2'
@@ -8,7 +9,7 @@ const Featured = ({name, downloadUrl, image, isFree, _id}) => {
             <div className='bg-white w-full flex flex-col p-4 cursor-pointer items-center rounded-lg shadow mx-auto h-full '>
                 <div className='mb-4 p-2 h-1/2 overflow-hidden'> 
                     <img 
-                        src={image} 
+                        src={imageUrl} 
                         alt = "product"
                         className='hover:scale-110 transition h-full w-full'
                     /> 
